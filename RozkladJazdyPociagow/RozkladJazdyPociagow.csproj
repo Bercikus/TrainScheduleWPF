@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="20200807123931icki.JPG_900-528.jpg" />
+    <None Remove="nowy-rozklad-jazdy-na-kolei.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="20200807123931icki.JPG_900-528.jpg" />
+    <Resource Include="nowy-rozklad-jazdy-na-kolei.jpg" />
+  </ItemGroup>
+
+</Project>

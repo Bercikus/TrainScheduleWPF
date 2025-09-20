@@ -1,0 +1,105 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RozkladJazdyPociagow"
+        xmlns:Emit="clr-namespace:System.Reflection.Emit;assembly=System.Reflection.Emit.ILGeneration" x:Name="MainWin" x:Class="RozkladJazdyPociagow.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="465" Width="680" 
+        ResizeMode="NoResize">
+
+
+    <Grid x:Name="Window1" Background="LightGray" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <Image  HorizontalAlignment="Center" Height="399" Margin="0,50,0,0" VerticalAlignment="Top" Width="679" Source="/20200807123931icki.JPG_900-528.jpg" MouseDown="BackgroundClick">
+
+            <Image.OpacityMask>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Image.OpacityMask>
+
+        </Image>
+
+
+
+        <DockPanel x:Name="dockPanel" VerticalAlignment="Top" Height="50">
+
+            <Menu x:Name="menu1" Height="50"  Width="Auto" VerticalAlignment="Top"   DockPanel.Dock="Top" Background="#FF0D3070">
+                <MenuItem Header="Rozkład" FontSize="16" FontWeight="Bold"     Foreground="White" Margin="10">
+                    <MenuItem Header="Wyszukaj połączeń" Background="#FF0D3070" Click="LookingTrains"/>
+                    <MenuItem Header="Dodaj połączenie" Background="#FF0D3070" Click="addConnectionClick"  ></MenuItem>
+                    <MenuItem Header="Kalendarz" Background="#FF0D3070" Click="ShowCalender"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Aktualności" FontSize="16" FontWeight="Bold"     Foreground="White" Margin="10"   Click="ShowNewsPageClick"/>
+                <MenuItem Header="Bilety" FontSize="16" FontWeight="Bold"     Foreground="White" Margin="10"  Click="ShowTicketsPageClick"/>
+                <MenuItem Header="Kontakt" FontSize="16" FontWeight="Bold"     Foreground="White" Margin="10" Click="ContactPageClick"/>
+
+            </Menu>
+
+        </DockPanel>
+
+        
+
+        <Calendar x:Name="CalenderWin1" HorizontalAlignment="Left" Visibility="Hidden" Margin="482,57,0,0" VerticalAlignment="Top"/>
+        
+
+        
+        <Grid x:Name="gridTickets" Margin="0,50,0,0" Background="#FF154AAC" Visibility="Hidden" Opacity="0.95" HorizontalAlignment="Center" Width="283">
+          
+            <Label Content="KUP BILET" HorizontalAlignment="Left" Margin="86,10,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20" Width="137" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Left" Text="Ceny biletów znajdziesz na        naszej stronie" TextWrapping="Wrap" VerticalAlignment="Top" Height="80" Width="246" Margin="37,65,0,0" FontSize="18" Foreground="White"/>
+            <TextBlock  Margin="58,165,21,0" FontSize="17" >
+                <Hyperlink Foreground="Purple"    NavigateUri= "http://community.visual-basic.it/AlessandroEnglish"    Hyperlink.RequestNavigate="Hyperlink_RequestNavigate" FontSize="24">
+                    www.intercity.pl
+                </Hyperlink>
+            </TextBlock>
+
+        </Grid>
+
+
+
+
+
+
+        <Grid x:Name="gridNews"  Background="#FF154AAC" Visibility="Hidden" Opacity="0.95" HorizontalAlignment="Center" Width="327" Margin="0,50,0,0">
+
+
+            <Label Content="NAJŚWIEŻSZE INFORMACJE" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="54" Width="282" FontSize="20" FontWeight="Bold" Foreground="White"/>
+            <Label Content="Pociąg ekspresowy IC1000 z Katowic &#xA;do Wrocławia jest opuźniony o &#xA;37 minut z powodu awarii sieci.  Za &#xA;wszelkie utrudnienia przepraszamy!" HorizontalAlignment="Center" Margin="0,69,0,0" VerticalAlignment="Top" Height="114" Width="282" FontSize="16" FontWeight="Normal" Foreground="White"/>
+            <Label Content="Informujemy iż w dniach &#xA;16-17 kwietnia połączenia nie będą&#xA;funkcjonować zgodnie z głównym&#xA;rozkładem z powodu świąt&#xA; Wielkiej Nocy." HorizontalAlignment="Center" Margin="0,183,0,0" VerticalAlignment="Top" Height="122" Width="282" FontSize="16" FontWeight="Normal" Foreground="White"/>
+
+
+        </Grid>
+
+
+       
+
+
+        
+
+
+        <Image Visibility="Hidden" HorizontalAlignment="Left" Height="200" Margin="387,50,0,0" VerticalAlignment="Top" Width="293" Source="/nowy-rozklad-jazdy-na-kolei.jpg" OpacityMask="Black"/>
+        
+        
+        <Grid x:Name="gridContact" Margin="0,50,0,0" Visibility="Hidden" Background="#FF154AAC"  Opacity="0.95" HorizontalAlignment="Center" Width="327">
+            <Label Content="SKONTAKTUJ SIĘ Z NAMI" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20" Width="264" FontWeight="Bold"/>
+            <Label Content="E-mail: pkp.intercity@interia.pl" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14" Width="264" FontWeight="Bold"/>
+            <Label Content="Infolinia: +48 551 667 009" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14" Width="264" FontWeight="Bold"/>
+            <Label Content="koszt infolini to 3,70zł/min" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14" Width="264" FontWeight="Bold"/>
+
+        </Grid>
+
+
+    </Grid>
+
+</Window>
